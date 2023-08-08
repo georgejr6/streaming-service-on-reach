@@ -1,0 +1,80 @@
+// Note: This Teal code is a low-level equivalent of the Reach code.
+// It is a simplified representation and might not cover all aspects of the Reach contract.
+
+// Define constants
+int 1000000 // SONG_PRICE
+int 100 // MAX_SONGS
+int 10000000 // INITIAL_BALANCE
+
+// On application creation
+txn ApplicationID
+int 0
+==
+bnz initialize
+
+// On "addSong" call
+txn ApplicationID
+int 1
+==
+bnz add_song
+
+// On "playSong" call
+txn ApplicationID
+int 2
+==
+bnz play_song
+
+// On "getSongDetails" call
+txn ApplicationID
+int 3
+==
+bnz get_song_details
+
+// On "getBalance" call
+txn ApplicationID
+int 4
+==
+bnz get_balance
+
+// On "withdrawBalance" call
+txn ApplicationID
+int 5
+==
+bnz withdraw_balance
+
+// Initialization logic
+initialize:
+app_local_put 0 "SONG_PRICE" 1000000
+app_local_put 0 "MAX_SONGS" 100
+app_local_put 0 "INITIAL_BALANCE" 10000000
+int 1
+return
+
+// Add song logic
+add_song:
+// Add song logic here
+int 1
+return
+
+// Play song logic
+play_song:
+// Play song logic here
+int 1
+return
+
+// Get song details logic
+get_song_details:
+// Get song details logic here
+int 1
+return
+
+// Get balance logic
+get_balance:
+app_local_get 0 "balance"
+return
+
+// Withdraw balance logic
+withdraw_balance:
+// Withdraw balance logic here
+int 1
+return
